@@ -423,6 +423,13 @@ export class AgmMap implements OnChanges, OnInit, OnDestroy {
       });
     });
   }
+  
+  /**
+   * Triggers an update bounds on the google map instance.
+   */
+  triggerUpdateBounds(bounds: LatLngBounds|LatLngBoundsLiteral) {
+    this._updateBounds(bounds);
+  }
 
   private _updatePosition(changes: SimpleChanges) {
     if (changes['latitude'] == null && changes['longitude'] == null &&
